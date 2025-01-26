@@ -1,0 +1,200 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-weight: 400;
+	line-height: 1.5;
+	font-family: "Lexend Giga", serif;
+	background-color: #f1f1f1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.clock {
+	width: 42vw;
+	height: 42vw;
+	box-shadow: inset -1rem -1rem 1.5rem rgba(255, 255, 255, 1),
+		inset 1rem 1rem 1rem rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	position: relative;
+}
+
+.clock::before {
+	content: "";
+	position: absolute;
+	width: 46vw;
+	height: 46vw;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	box-shadow: -1rem -1rem 1.5rem rgba(255, 255, 255, 1),
+		1rem 1rem 1rem rgba(0, 0, 0, 0.1);
+	transform: translate(-50%, -50%);
+	z-index: -1;
+}
+
+.clock::after {
+	position: absolute;
+	content: "";
+	width: 4rem;
+	height: 4rem;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #000;
+	border-radius: 50%;
+	z-index: 11;
+}
+
+.hand {
+	--rotation: 0;
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+	transform-origin: bottom;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	z-index: 10;
+}
+
+.second {
+	width: 0.8rem;
+	height: 42%;
+	background-color: #8d0b41;
+}
+
+.minute {
+	width: 1.2rem;
+	height: 36%;
+	background-color: #d6cfb4;
+}
+
+.hour {
+	width: 1.6rem;
+	height: 30%;
+	background-color: #d39d55;
+}
+
+.number {
+	--rotation: 0;
+	position: absolute;
+	font-size: 6rem;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	transform: rotate(var(--rotation));
+	padding: 1rem;
+}
+
+.clock .number-1 {
+	--rotation: 30deg;
+}
+
+.clock .number-2 {
+	--rotation: 60deg;
+}
+
+.clock .number-3 {
+	--rotation: 90deg;
+}
+
+.clock .number-4 {
+	--rotation: 120deg;
+}
+
+.clock .number-5 {
+	--rotation: 150deg;
+}
+
+.clock .number-6 {
+	--rotation: 180deg;
+}
+
+.clock .number-7 {
+	--rotation: 210deg;
+}
+
+.clock .number-8 {
+	--rotation: 240deg;
+}
+
+.clock .number-9 {
+	--rotation: 270deg;
+}
+
+.clock .number-10 {
+	--rotation: 300deg;
+}
+
+.clock .number-11 {
+	--rotation: 330deg;
+}
+
+@media (max-width: 137.5em) {
+	html {
+		font-size: 43.75%;
+	}
+}
+
+@media (max-width: 95em) {
+	html {
+		font-size: 37.5%;
+	}
+}
+
+@media (max-width: 75em) {
+	.clock {
+		width: 68vw;
+		height: 68vw;
+	}
+
+	.clock::before {
+		width: 72vw;
+		height: 72vw;
+	}
+}
+
+@media (max-width: 52.5em) {
+	html {
+		font-size: 31.25%;
+	}
+
+	.clock {
+		width: 78vw;
+		height: 78vw;
+	}
+
+	.clock::before {
+		width: 82vw;
+		height: 82vw;
+	}
+}
+
+@media (max-width: 31.25em) {
+	html {
+		font-size: 25%;
+	}
+
+	.clock {
+		width: 88vw;
+		height: 88vw;
+	}
+
+	.clock::before {
+		width: 92vw;
+		height: 92vw;
+	}
+}
